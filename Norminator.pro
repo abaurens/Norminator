@@ -8,3 +8,6 @@ SOURCES += \
 HEADERS+= \
     norminator.h \
     MainWindow.h
+
+OTHER_FILES+= \
+    MainWindow.ui
