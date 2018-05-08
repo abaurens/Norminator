@@ -2,49 +2,29 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets>
-#if defined(QT_PRINTSUPPORT_LIB)
-#include <QtPrintSupport/qtprintsupportglobal.h>
-#if QT_CONFIG(printdialog)
-#include <QtPrintSupport>
-#endif
-#endif
 
 #include <QMainWindow>
-#include <QDockWidget>
-#include <QTextEdit>
-#include <QListWidget>
-#include <QMenu>
+
+#include "EditorTabs.h"
+#include "ProjectExplorer.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow();
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals:
+    void resized(QRect r);
+
 private slots:
-    void newLetter();
-    void save();
-    void print();
-    void undo();
-    void about();
-    void insertCustomer(const QString &customer);
-    void addParagraph(const QString &paragraph);
+    virtual void resizeEvent(QResizeEvent *event);
 
 private:
-    void createActions();
-    void createStatusBar();
-    void createDockWindows();
-
-    QTextEdit   *m_textEdit;
-    QDockWidget *m_terminalDock;
-    QDockWidget *m_fileExplorerDock;
-
-    QListWidget *customerList;
-    QListWidget *paragraphsList;
-
-    QMenu *viewMenu;
+    EditorTabs      tabsWidget;
+    ProjectExplorer projectExplorer;
 };
 
 #endif // MAINWINDOW_H

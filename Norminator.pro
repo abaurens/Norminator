@@ -3,11 +3,16 @@ QT	+=	widgets
 
 SOURCES += \
     main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    EditorTabs.cpp \
+    ProjectExplorer.cpp
 
-HEADERS+= \
+HEADERS += \
     norminator.h \
-    MainWindow.h
+    MainWindow.h \
+    EditorTabs.h \
+    ProjectExplorer.h
 
-OTHER_FILES+= \
-    MainWindow.ui
+RESOURCES += \
+    themes.qrc
+
