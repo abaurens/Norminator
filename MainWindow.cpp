@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), tabsWidget(this),
 
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
+    event->accept();
     emit this->resized(geometry());
 }
 
