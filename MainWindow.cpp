@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), tabsWidget(this),
     setMinimumSize(800, 600);
 
     tabsWidget.addTab(new QWidget, "test");
+    tabsWidget.addTab(new QWidget, "test2");
     addDockWidget(Qt::LeftDockWidgetArea, &projectExplorer);
 
     show();

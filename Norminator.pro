@@ -1,5 +1,5 @@
 QT      +=      core
-QT	+=	widgets
+QT		+=		widgets
 
 SOURCES += \
     main.cpp \
@@ -15,4 +15,3 @@ HEADERS += \
 
 RESOURCES += \
     themes.qrc
-
